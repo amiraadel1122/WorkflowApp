@@ -1,0 +1,26 @@
+.logo-img{
+background-image: url('../../assets/images/webalo-white.png');
+height: 20px;
+    width: 90px;
+    background-size: 90px 20px;
+}
+.login-image{
+    background-image: url('../../assets/images/login-image.png');
+    margin-top: 5rem;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.login-form-container{
+    h1{
+        font-size: 30px;
+        color: #585c61;
+    }
+    .mat-form-field{
+        width: 100%;
+    }
+    .mat-icon-button .mat-icon{
+        font-size: 20px;
+    }
+}

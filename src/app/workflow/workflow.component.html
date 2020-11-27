@@ -1,0 +1,98 @@
+<div class="new-activity new-workflow">
+  <h2 class="activity-title">Name WorkFLow</h2>
+  <p class="text-secondary">
+    Enter a name for workflow an select a folder to save it in your account in
+    the server.
+    <span><a href=""> (click here for help)</a></span>
+  </p>
+
+  <mat-divider></mat-divider>
+
+  <mat-vertical-stepper linear #stepper>
+    <!--Step of Naming workflow-->
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Create Workflow</ng-template>
+        <p class="workflow-field">
+          <mat-form-field>
+            <mat-label>Workflow Name</mat-label>
+            <input
+              matInput
+              formControlName="WorkflowName"
+              placeholder="Enter workflow name"
+              required
+            />
+          </mat-form-field>
+        </p>
+        <p class="workflow-field">
+          <mat-form-field>
+            <mat-label>Select folder</mat-label>
+            <mat-select formControlName="serverFolder" name="folder">
+              <mat-option>None</mat-option>
+              <mat-option
+                *ngFor="let folder of serverFolders"
+                [value]="folder.value"
+              >
+                {{ folder.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p>
+
+        <p class="workflow-field">
+          <mat-label>Folder: </mat-label>
+          <input
+            type="file"
+            formControlName="FolderName"
+            placeholder="Select a folder"
+          />
+        </p>
+        <p class="workflow-field">
+          <mat-form-field class="example-full-width">
+            <mat-label>Workflow Description</mat-label>
+            <textarea
+              matInput
+              placeholder="Ex. This workflow is for ..."
+            ></textarea>
+          </mat-form-field>
+        </p>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <!--Step of Edit Workflow-->
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Edit Workflow</ng-template>
+        <p class="workflow-field">
+          <mat-form-field class="example-full-width">
+            <mat-label>Workflow Definition</mat-label>
+            <textarea
+              matInput
+              rows="10"
+              formControlName="WorkflowDefinition"
+              required
+              placeholder="Ex. This workflow is for ..."
+            ></textarea>
+          </mat-form-field>
+        </p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>
+            Launch Editor
+          </button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <!--Step of Editor-->
+      <ng-template matStepLabel>Editor</ng-template>
+      <app-diagram-model></app-diagram-model>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</div>

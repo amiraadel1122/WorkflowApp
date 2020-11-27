@@ -1,0 +1,14 @@
+.activity-home{
+    background-image: url('../../assets/images/welcome.jpg');
+    height: calc(100vh - 60px);
+    background-size: cover;
+    .welcome-text{
+        color: #fff;
+        font-weight: bold;
+        background-color: #000;
+        position: absolute;
+        top: 5%;
+        left: 0%;
+        padding: 0 30px;
+    }
+}

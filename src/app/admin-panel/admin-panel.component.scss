@@ -1,0 +1,69 @@
+@import "../login/login.component.scss" ;
+
+.sidenav-toggle-btn{
+    margin-left: 11%;
+}
+.sidenav-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .side-nav {
+        display: flex;
+        border: none;
+        box-shadow: -18px 0px 41px #d4d0d0;
+        align-items: center;
+        justify-content: center;
+        width: 280px;
+        background: #fff;
+      }
+      
+  }
+  
+
+.sidenav-menu{
+   
+    .sidenav-list{
+        padding-left: 5px;
+        li{
+            list-style: none;
+            font-size: 20px;
+            padding: 10px;
+           
+            &:hover {
+                -webkit-transition: 1s ease-in-out;
+                -moz-transition: 1s ease-in-out;
+                -o-transition: 1s ease-in-out;
+                transition: 0.7s ease-in-out;
+                padding-left: 17px;
+              }
+
+
+        }
+    }
+    .submenu-list{
+        padding-left: 25px;
+       li{
+        font-size: 15px;
+        &:hover{
+            -webkit-transition: 1s ease-in-out;
+            -moz-transition: 1s ease-in-out;
+            -o-transition: 1s ease-in-out;
+            transition: 0.7s ease-in-out;
+            padding-left: 20px;
+          }
+       }
+      
+    }
+    .nav-item{
+        font-size: 16px ;
+        cursor: pointer;
+        color: #555;
+    }
+   i{
+       font-size: 15px;
+   }
+}
+  
+ 

@@ -1,0 +1,50 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '../node_modules/@syncfusion/ej2-angular-diagrams/styles/material.css';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+button:focus {
+  outline: none;
+}
+a {
+  text-decoration: none !important;
+}
+/******************* Shared Styles **********************/
+.new-activity {
+  padding: 5px;
+  padding-bottom: 30px;
+  .activity-title {
+    text-transform: capitalize;
+    color: #0d6c7b;
+    margin-bottom: 1px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .content {
+    padding: 16px;
+    margin-bottom: 60px;
+    i {
+      font-size: 50px;
+    }
+    p {
+      margin-left: 3rem;
+    }
+  }
+}
+.footer {
+  display: flex;
+  bottom: 0;
+  position: fixed;
+  z-index: 9999;
+  height: 50px;
+  width: 100%;
+  flex-direction: row-reverse;
+  background: #f5f5f5;
+  padding: 8px;
+}
