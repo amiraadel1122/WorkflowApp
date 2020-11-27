@@ -1,11 +1,10 @@
 <div class="new-activity">
- 
-    <h2 class="activity-title">Start a new activity</h2>
-    <p class="text-secondary">
-      Select the category of the activity you would like to start.
-      <span><a href=""> (click here for help)</a></span>
-    </p>
- 
+  <h2 class="activity-title">Start a new activity</h2>
+  <p class="text-secondary">
+    Select the category of the activity you would like to start.
+    <span><a href=""> (click here for help)</a></span>
+  </p>
+
   <mat-divider></mat-divider>
   <div class="content">
     <div fxLayout="row wrap" fxLayoutGap="16px grid">
@@ -16,7 +15,10 @@
         fxFlex.md="100%"
         *ngFor="let card of activityCards"
       >
-        <mat-card class="mat-elevation-z4" routerLink="{{card.url}}">
+        <mat-card
+          class="mat-elevation-z4 activity-card"
+          routerLink="{{ card.url }}"
+        >
           <mat-card-header>
             <mat-card-title>
               <mat-icon aria-hidden="false">{{ card.icon }}</mat-icon>
@@ -31,4 +33,3 @@
     </div>
   </div>
 </div>
- 

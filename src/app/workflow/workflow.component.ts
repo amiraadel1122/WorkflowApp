@@ -14,6 +14,7 @@ interface serverFolders {
 export class WorkflowComponent implements OnInit {
   firstFormGroup: any = FormGroup;
   secondFormGroup: any = FormGroup;
+  lastFormGroup: any = FormGroup;
   isEditable = true;
 
   constructor(private _formBuilder: FormBuilder) {}
@@ -28,10 +29,10 @@ export class WorkflowComponent implements OnInit {
       WorkflowName: ['', Validators.required],
       FolderName: [''],
       serverFolder: [this.serverFolders[0].value],
+      WorkflowDescription: [''],
     });
     this.secondFormGroup = this._formBuilder.group({
       WorkflowDefinition: ['', Validators.required],
     });
   }
-
 }

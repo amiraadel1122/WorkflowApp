@@ -1,67 +1,116 @@
-<mat-toolbar>
-  <div class="logo-img"></div>
+<div [class.mobile-view]="mobileQuery.matches">
+  <mat-toolbar class="toolbar-head">
+    <div class="logo-img"></div>
+<!--Toggle btn for slider-->
+    <button
+      mat-button
+      class="sidenav-toggle-btn"
+      (click)="sidenav.toggle(); showSlider = !showSlider"
+    >
+      <mat-icon>{{ !showSlider ? "view_headline" : "close" }}</mat-icon>
+    </button>
 
-  <button mat-button class="sidenav-toggle-btn" (click)="sidenav.toggle(); showSlider = !showSlider">
-    <mat-icon>{{ !showSlider ? "view_headline" : "close" }}</mat-icon>
-  </button>
+    <button mat-button [matMenuTriggerFor]="menu" class="ml-auto">
+      <img
+        src="../../assets/images/blank-profile.png"
+        width="30"
+        height="30"
+        alt="blank-profile"
+      />
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Profile</button>
+      <button mat-menu-item routerLink="/">Log out</button>
+    </mat-menu>
+    <p class="m-0 text-info user-name">{{ name }}</p>
+  </mat-toolbar>
 
-  <button mat-button [matMenuTriggerFor]="menu" class="ml-auto">
-    <img src="../../assets/images/blank-profile.png" width="30" height="30" alt="blank-profile" />
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Profile</button>
-    <button mat-menu-item routerLink="/">Log out</button>
-  </mat-menu>
-  <p class="m-0 text-info">{{ name }}</p>
-</mat-toolbar>
+  <!--SideNav Section-->
+  <mat-sidenav-container
+    class="sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 5 : 0"
+  >
+    <mat-sidenav
+      role="navigation"
+      class="side-nav"
+      #sidenav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="30"
+      [fixedBottomGap]="options.value.bottom"
+    >
+      <div class="sidenav-menu mt-4">
+        <ul class="sidenav-list">
+          <li (click)="sidenav.toggle(); showSlider = !showSlider">
+            <i class="fa fa-home mr-2"></i
+            ><a routerLink="/admin-panel" class="nav-item">Home</a>
+          </li>
+          <li>
+            <i class="fa fa-tasks mr-2"></i
+            ><span class="nav-item">
+              <a
+                (click)="sidenav.toggle(); showSlider = !showSlider"
+                routerLink="/admin-panel/newactivity"
+                class="mr-2"
+                >Start a new activity</a
+              >
 
-<!--SideNav Section-->
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav role="navigation" class="side-nav" #sidenav mode="side" opened [fixedInViewport]="options.value.fixed"
-    [fixedTopGap]="options.value.top" [fixedBottomGap]="options.value.bottom">
-    <div class="sidenav-menu mt-4">
-      <ul class="sidenav-list">
-        <li>
-          <i class="fa fa-home mr-2"></i><a routerLink="/admin-panel" class="nav-item">Home</a>
-        </li>
-        <li>
-          <i class="fa fa-tasks mr-2"></i><span class="nav-item">
-            <a routerLink="/admin-panel/newactivity" class="mr-2">Start a new activity</a>
+              <i
+                (click)="showSubmenu = !showSubmenu"
+                class="fa {{ showSubmenu ? 'fa-angle-up' : 'fa-angle-down' }}"
+              ></i
+            ></span>
+            <ul class="submenu-list mt-2" *ngIf="showSubmenu">
+              <li (click)="sidenav.toggle(); showSlider = !showSlider">
+                <a class="nav-item" routerLink="/admin-panel/category"
+                  >Select activity category</a
+                >
+              </li>
+              <li (click)="sidenav.toggle(); showSlider = !showSlider">
+                <a class="nav-item" routerLink="/admin-panel/subcategory"
+                  >Select activity subcategory</a
+                >
+              </li>
+              <li (click)="sidenav.toggle(); showSlider = !showSlider">
+                <a class="nav-item">Select activity </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </mat-sidenav>
 
-            <i (click)="showSubmenu = !showSubmenu"
-              class="fa {{ showSubmenu ? 'fa-angle-up' : 'fa-angle-down' }}"></i></span>
-          <ul class="submenu-list mt-2" *ngIf="showSubmenu">
-            <li>
-              <a class="nav-item" routerLink="/admin-panel/category">Select activity category</a>
-            </li>
-            <li>
-              <a class="nav-item" routerLink="/admin-panel/subcategory">Select activity subcategory</a>
-            </li>
-            <li><a class="nav-item">Select activity </a></li>
-          </ul>
-        </li>
-        <div id="marker"></div>
-      </ul>
+    <mat-sidenav-content [formGroup]="options" role="main">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <!-- footer -->
+
+  <div class="footer">
+    <div class="content">
+      <button
+        mat-stroked-button
+        color="primary"
+        (click)="backClicked()"
+        aria-label="previuos step"
+        class="mr-3"
+        matTooltip="Previuos"
+      >
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+      <button
+        mat-stroked-button
+        color="primary"
+        aria-label="next step"
+        class="mr-3"
+        matTooltip="Next"
+        disabled
+      >
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+      <button mat-raised-button color="primary" class="mr-2">Finish</button>
+      <button mat-raised-button color="warn" class="mr-3">Cancel</button>
     </div>
-  </mat-sidenav>
-
-  <mat-sidenav-content [formGroup]="options" role="main">
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-<!-- footer -->
-
-<div class="footer">
-  <div class="content">
-    <button mat-stroked-button color="primary" (click)="backClicked()" aria-label="previuos step" class="mr-3"
-      matTooltip="Previuos">
-      <mat-icon>navigate_before</mat-icon>
-    </button>
-    <button mat-stroked-button color="primary" aria-label="next step" class="mr-3" matTooltip="Next" disabled>
-      <mat-icon>navigate_next</mat-icon>
-    </button>
-    <button mat-raised-button color="primary" class="mr-2">Finish</button>
-    <button mat-raised-button color="warn" class="mr-3">Cancel</button>
   </div>
 </div>

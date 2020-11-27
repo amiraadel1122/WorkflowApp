@@ -52,11 +52,12 @@
             <mat-label>Workflow Description</mat-label>
             <textarea
               matInput
+              formControlName="WorkflowDescription"
               placeholder="Ex. This workflow is for ..."
             ></textarea>
           </mat-form-field>
         </p>
-        <div>
+        <div class="stepper-btn">
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
@@ -77,7 +78,7 @@
             ></textarea>
           </mat-form-field>
         </p>
-        <div>
+        <div class="stepper-btn">
           <button mat-button matStepperPrevious>Back</button>
           <button mat-raised-button color="primary" matStepperNext>
             Launch Editor
@@ -85,11 +86,12 @@
         </div>
       </form>
     </mat-step>
-    <mat-step>
+    <mat-step [stepControl]="lastFormGroup">
       <!--Step of Editor-->
+
       <ng-template matStepLabel>Editor</ng-template>
       <app-diagram-model></app-diagram-model>
-      <div>
+      <div class="stepper-btn">
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>

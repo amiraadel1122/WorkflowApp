@@ -53,7 +53,7 @@ export class DiagramModelComponent implements OnInit {
   public segments1: OrthogonalSegmentModel = [
     { type: 'Orthogonal', direction: 'Right', length: 100 },
   ];
-
+  //Node Default
   public nodeDefaults(node: NodeModel): NodeModel {
     let obj: NodeModel = {};
     if (obj.width === undefined) {
@@ -69,6 +69,7 @@ export class DiagramModelComponent implements OnInit {
     obj.ports = getPorts(node);
     return obj;
   }
+  //Connectors default
   public connDefaults(obj: Connector): void {
     if (obj.id.indexOf('connector') !== -1) {
       obj.type = 'Orthogonal';
@@ -120,7 +121,7 @@ export class DiagramModelComponent implements OnInit {
     }
   }
 
-  //SymbolPalette Properties
+  //Symbol Palette Properties
   public symbolMargin: MarginModel = {
     left: 15,
     right: 15,
@@ -229,7 +230,7 @@ export class DiagramModelComponent implements OnInit {
       targetDecorator: { shape: 'None' },
     },
   ];
-
+  //Pallete OBJ
   public palettes: PaletteModel[] = [
     {
       id: 'basic',

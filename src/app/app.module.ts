@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Angular imports
-import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
@@ -22,24 +22,29 @@ import { WorkflowComponent } from './workflow/workflow.component';
 import { DiagramModelComponent } from './workflow/diagram-model/diagram-model.component';
 
 //Imports for material components
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatCardModule} from '@angular/material/card';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatSelectModule} from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatSelectModule } from '@angular/material/select';
 
 // import the DiagramModule for the Diagram component
-import {DiagramModule, DiagramAllModule, SymbolPaletteAllModule, OverviewAllModule } from '@syncfusion/ej2-angular-diagrams';
+import {
+  DiagramModule,
+  DiagramAllModule,
+  SymbolPaletteAllModule,
+  OverviewAllModule,
+} from '@syncfusion/ej2-angular-diagrams';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +56,6 @@ import {DiagramModule, DiagramAllModule, SymbolPaletteAllModule, OverviewAllModu
     SubcategoryComponent,
     WorkflowComponent,
     DiagramModelComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -78,14 +82,14 @@ import {DiagramModule, DiagramAllModule, SymbolPaletteAllModule, OverviewAllModu
     MatTooltipModule,
     MatStepperModule,
     MatSelectModule,
-   //DiagramModule
-   DiagramModule,
-   DiagramAllModule,
+    //DiagramModule
+    DiagramModule,
+    DiagramAllModule,
     SymbolPaletteAllModule,
-     OverviewAllModule
+    OverviewAllModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

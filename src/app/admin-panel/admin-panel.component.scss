@@ -62,8 +62,21 @@
         color: #555;
     }
    i{
-       font-size: 15px;
+       font-size: 20px;
    }
+}
+.mobile-view {
+    .toolbar-head {
+        position: fixed;
+        /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+        z-index: 2;
+      }
+}
+.mobile-view {
+    .sidenav-container {
+        /* This allows the `<body>` to be our scrolling element for mobile layouts. */
+        flex: 1 0 auto;
+      }
 }
   
  
