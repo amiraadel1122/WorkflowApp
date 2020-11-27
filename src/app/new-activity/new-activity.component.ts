@@ -18,37 +18,37 @@ export class NewActivityComponent implements OnInit {
       title: 'Edit applications and data connection',
       icon: 'edit',
       label: 'Review and edit content user already recieved.',
-      url: '/',
+      url: '.',
     },
     {
       title: 'Fine Tune your connections',
       icon: 'tune',
       label: 'Customize services , data formats and tasks.',
-      url: '/admin-panel/category',
+      url: '.',
     },
     {
       title: 'Organize content on your devices',
       icon: 'widgets',
       label: 'Manage device home screens and workspaces.',
-      url: '/admin-panel/category',
+      url: '.',
     },
     {
       title: 'Manage users and access',
       icon: 'group',
       label: 'Manage users, users profiles and groups.',
-      url: '/admin-panel/category',
+      url: '.',
     },
     {
       title: 'Manage webalo Production ORD Account',
       icon: 'list_alt',
       label: 'Manage accounts plan and content.',
-      url: '/admin-panel/category',
+      url: '.',
     },
     {
       title: 'View tutorials and browse manual',
       icon: 'live_help',
       label: 'Find online help , report a problem or request support.',
-      url: '/admin-panel/category',
+      url: '.',
     },
   ];
 

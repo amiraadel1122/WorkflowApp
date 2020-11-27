@@ -11,13 +11,13 @@ export class CategoryComponent implements OnInit {
       title: 'Reports',
       icon: 'assignment',
       label:' Deliver new content to users.',
-      url: '/admin-panel'
+      url: '.'
     },
     {
       title: 'Forms',
       icon: 'list_alt',
       label: 'Review and edit content user already recieved.',
-      url: '/admin-panel'
+      url: '.'
     },
     {
       title: 'Workflows',
@@ -29,25 +29,25 @@ export class CategoryComponent implements OnInit {
       title: 'Databases',
       icon: 'storage',
       label: 'Manage device home screens and workspaces.',
-      url: '/admin-panel'
+      url: '.'
     },
     {
       title: 'Enterprise Applications',
       icon: 'account_balance',
       label: 'Manage users, users profiles and groups.',
-      url: '/admin-panel'
+      url: '.'
     },
     {
       title: 'Web Services',
       icon: 'domain',
       label: 'Manage accounts plan and content.',
-      url: '/admin-panel'
+      url: '.'
     },
     {
       title: 'Industerial IOT',
       icon: 'construction',
       label: 'Find online help , report a problem or request support.',
-      url: '/admin-panel'
+      url: '.'
     },
   ];
 
